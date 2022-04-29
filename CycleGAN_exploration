@@ -1,0 +1,18 @@
+Something about GAN[1] network
+Given a training set, this technique learns to generate new data with the same statistics as the training set. For example, a GAN trained on photographs can generate new photographs that look at least superficially authentic to human observers, having many realistic characteristics. Though originally proposed as a form of generative model for unsupervised learning, GANs have also proved useful for semi-supervised learning fully supervised learningand reinforcement learning
+The core idea of a GAN is based on the "indirect" training through the discriminator, another neural network that is able to tell how much an input is "realistic", which itself is also being updated dynamically. This basically means that the generator is not trained to minimize the distance to a specific image, but rather to fool the discriminator. This enables the model to learn in an unsupervised manner. 
+(Excerpt from Wikipedia)
+Then here comes CycleGAN[2]:
+The dissertation makes its content too cumbersome. In short, Cycle GAN uses two Generators and two Discriminators, where the two inputs share two Generators and each has a Discriminator, while adding CycleConsistencyLoss. The more interesting part is that he added CycleConsistencyLoss to prevent F(G( X)) deviates from the goal of generating X, and is what I personally think is the more valuable part of the paper.
+Then, we can easily imagine that this kind of image using style transfer will have a wide range of application scenarios. For LLIE, we can make it more suitable for LLIE field by further modifying CycleGAN!
+The Retinex[3] theory divides the image into the illumination component and the reflection component. We use this theory to decompose the image and send it to the Cycle GAN network, and then enhance the illumination component we want without changing the reflection component, which may achieve better results. This idea has been applied to many scenarios, and good results have been obtained.
+At the same time, I am still thinking about a question, since we are only enhancing the lighting component, do we still use Unet instead of replacing it with other more suitable networks?
+A week ago, when I was reading a paper on the application of AdderNet[4] in the field of super-resolution, I found that the paper used a high-pass filter to decompose the frequency domain components of the image and sent them to the AdderSR-net[5] network he modified. At the same time, I am also wondering if I can adapt this network based on Cycle GAN and let it also write articles on image-to-image-translation. Due to lack of time, I have not put into action.
+The above is the problem that MotaLee has been exploring. At the same time, I have to say that the paper in the direction of LLIE is really difficult to write. I have been stuck in the methodology for several days... Maybe I should add some loss functions and modify the network locally. To enrich the content of my dissertation…       :)
+
+References:
+[1] WIKIPEDIA: Generative adversarial network
+[2] Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks CVPR 2020
+[3] SpringerLink Encyclopedia of Color Science and Technology: Retinex theory by Ming Ronnier Luo
+[4] AdderNet: Do We Really Need Multiplications in Deep Learning? CVPR 2020
+[5] AdderSR: Towards Energy Efficient Image Super-Resolution CVPR 2021
