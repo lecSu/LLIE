@@ -10,6 +10,7 @@ At the same time, I am still thinking about a question, since we are only enhanc
 A week ago, when I was reading a paper on the application of AdderNet[4] in the field of super-resolution, I found that the paper used a high-pass filter to decompose the frequency domain components of the image and sent them to the AdderSR-net[5] network he modified. At the same time, I am also wondering if I can adapt this network based on Cycle GAN and let it also write articles on image-to-image-translation. Due to lack of time, I have not put into action.
 The above is the problem that MotaLee has been exploring. At the same time, I have to say that the paper in the direction of LLIE is really difficult to write. I have been stuck in the methodology for several days... Maybe I should add some loss functions and modify the network locally. To enrich the content of my dissertation…       :)
 
+
 References:
 [1] WIKIPEDIA: Generative adversarial network
 [2] Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks CVPR 2020
