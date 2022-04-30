@@ -1,0 +1,9 @@
+Some solutions to the current methodology stuck and my own thoughts on network modification:
+Methodology can't be written because I don't have so many modified methods, so this aspect is simplified
+At the same time, since most of the content I wrote before has borrowed from the format content of the UDCN paper, it is necessary to refer to the content of other papers for modification.
+And, on this basis, I need to do a series of ablation experiments and comparative experiments... I haven't thought of a suitable plan for ablation (because the network structure was only partially modified... At the same time, remove the generator or replace it with other networks to see See if he is sota?
+This just confirms what I thought before - Unet may not be the best choice in this situation.
+So I need to find a replacement network on this basis (a better network dedicated to brightness enhancement without changing other details, or a better appropriate adjustment of the illumination component to reduce color loss)
+At the same time, for loss, does adding contrastiveloss really cause the data to drop so much?
+Just adding it outside of netG and parallelizing convLoss in the generator will cause the Discriminator to misjudge and reduce the learning efficiency? What if netG is added to the reflection training component to reduce contrast?
+:)
